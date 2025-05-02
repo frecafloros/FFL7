@@ -1,3 +1,11 @@
+---
+layout: page
+title: "文法"
+permalink: /grammar/
+nav_order: 2
+has_children: true
+---
+
 # FFL7文法
 
 ## 語彙

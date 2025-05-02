@@ -1,5 +1,0 @@
-# Index
-
-## hoge
-
-index
