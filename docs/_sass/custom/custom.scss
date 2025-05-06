@@ -6,3 +6,22 @@
 .ipa {
     font-family: 'IPA 援助フォント', 'Charis SIL', 'Doulos SIL', serif;
 }
+
+.arial {
+    font-family: 'Arial';
+}
+
+/* テーブル全体を自動レイアウトに */
+table {
+    table-layout: auto !important;  /* 自動アルゴリズムを適用 */   /* :contentReference[oaicite:4]{index=4} */
+    width: auto        !important;  /* 必要なだけ幅をとる */       /* :contentReference[oaicite:5]{index=5} */
+  }
+  
+/* 列セル単体も自動幅に */
+th,
+td {
+  width: auto        !important;  /* 列幅をコンテンツ依存に */   /* :contentReference[oaicite:6]{index=6} */
+  white-space: normal;            /* テキストを折り返す */       /* :contentReference[oaicite:7]{index=7} */
+  min-width: 0 !important;
+}
+  

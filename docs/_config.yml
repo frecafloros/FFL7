@@ -18,17 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 人工言語FFL7
+title: 人工言語プリャンナ
 email: ""
 description: >- # this means to ignore newlines until "baseurl:"
-  これは人工言語FFL7（仮称）の文法解説をする予定で書き溜めた設計構想を公開しているサイトです。
+  これは人工言語プリャンナの文法解説をする予定で書き溜めた設計構想を公開しているサイトです。
 baseurl: "/FFL7" # the subpath of your site, e.g. /blog
 url: "https://frecafloros.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: s_zuika
 github_username:  frecafloros
 
 # Build settings
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs # For local test.
+# remote_theme: just-the-docs/just-the-docs # When pushing to git.
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
