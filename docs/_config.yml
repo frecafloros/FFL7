@@ -28,7 +28,7 @@ twitter_username: s_zuika
 github_username:  frecafloros
 
 # Build settings
-# theme: just-the-docs # For local test.
+#theme: just-the-docs # For local test.
 remote_theme: just-the-docs/just-the-docs # When pushing to git.
 plugins:
   - jekyll-feed

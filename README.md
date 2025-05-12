@@ -16,3 +16,7 @@ my-project/
     ├── pages
     └── _posts           # 残骸
 ```
+
+## build
+
+githubpagesを利用する場合は、`_config.yml`の`theme`をコメントアウトし、`remote_theme`のコメントアウトを外す。
