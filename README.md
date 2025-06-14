@@ -20,3 +20,7 @@ my-project/
 ## build
 
 githubpagesを利用する場合は、`_config.yml`の`theme`をコメントアウトし、`remote_theme`のコメントアウトを外す。
+
+## local test 
+
+`bundle exec jekyll serve`
