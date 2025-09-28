@@ -23,4 +23,17 @@ githubpagesを利用する場合は、`_config.yml`の`theme`をコメントア�
 
 ## local test 
 
-`bundle exec jekyll serve`
+`docs`ディレクトリで以下のコマンドを実行：
+```shell
+bundle exec jekyll serve
+```
+
+## push
+
+`_config.yml`を編集してから：
+
+```shell
+git add .
+git commit -m "vX.XX"
+git push origin main
+```
