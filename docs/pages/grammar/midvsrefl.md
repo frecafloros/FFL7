@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "中動態と反射態"
-permalink: /misk/midvsrefl/
+permalink: /misc/midvsrefl/
 ---
 
 # 中動態と反射態

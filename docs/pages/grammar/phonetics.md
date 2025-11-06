@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "音素"
-permalink: /grammar/phonetics/
+permalink: /grammar/phonetics/phoneme/
 nav_order: 3
 ---
 
@@ -96,7 +96,11 @@ nav_order: 3
 
 ## 母音
 
+プリャンナには、短母音21個＋重母音24個の計45個が音韻論上の母音として存在する。
+
 ### 単母音
+
+短母音は計21個ある。
 
 |平音|鼻音|咽頭音|
 |:--:|:--:|:--:|

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "語用例：「根本的な認識の転換」"
-permalink: /misk/copernicus/
+permalink: /misc/copernicus/
 ---
 
 # 語用例: 「根本的な認識の転換」

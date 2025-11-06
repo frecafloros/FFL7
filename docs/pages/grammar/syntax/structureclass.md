@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "機能語"
-permalink: /structureclass/
+permalink: /grammar/syntax/structureclass/
+parent: "統語論"
 ---
 
 # 機能語

@@ -79,3 +79,6 @@ collections:
     output: true
     permalink: /examples/:path/
     sort_by: nav_order
+
+# TeX
+math: katex

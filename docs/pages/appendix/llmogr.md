@@ -1,12 +1,13 @@
 ---
 layout: page
 title: "LLM-OGR"
-permalink: /misk/llmogr/
+permalink: /appendix/llmogr/
+parent: "附録"
 ---
 
 # LLM-Optimized Grammar Representation (LLM-OGR)
 
-語彙スロット：[root] - [semantic derivation] - [lexical aspect] - [grammatical aspect] - [voice] - [mood] - [tense] - [grammatical number] - [case] - [polarity] - [evidentiality] - [exclamative]
+語彙スロット：[semantic derivation] - [root] - [lexical aspect] - [grammatical aspect] - [voice] - [tense] - [mood] - [grammatical number] - [case] - [evidentiality] - [polarity] - [pragmatic]
 
 ## 語彙アスペクト
 

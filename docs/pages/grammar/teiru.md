@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "語用例：「着ている」"
-permalink: /misk/teiru/
+permalink: /misc/teiru/
 ---
 
 # 語用例: 「着ている」

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "語用例：「文法的数の例」"
-permalink: /misk/gramnumberex/
+permalink: /misc/gramnumberex/
 ---
 
 # 語用例: 文法的数の例
