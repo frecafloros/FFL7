@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "音韻形態論"
+title: "形態論"
 permalink: /grammar/slotstructure/
 nav_order: 4
 has_children: true
 ---
 
-# 音韻形態論
+# 形態論 (Morphology)
 
 ## スロット構造
 

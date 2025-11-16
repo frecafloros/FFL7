@@ -2,7 +2,7 @@
 layout: page
 title: "態"
 permalink: /grammar/slotstructure/voice/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 5
 ---
 

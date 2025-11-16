@@ -2,7 +2,7 @@
 layout: page
 title: "数"
 permalink: /grammar/slotstructure/gramnumber/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 8
 ---
 

@@ -2,7 +2,7 @@
 layout: page
 title: "証拠性"
 permalink: /grammar/slotstructure/evidentiality/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 10
 ---
 
@@ -23,6 +23,7 @@ nav_order: 10
 
 ## 活用例
 
+直前のスロットが子音で終わる場合は、子音連続を避けるために第10スロットの直前に介入母音 -- (-o-)を挿入する。
 
 ## 10.1 中立証拠性 (Neutral Evidentiality)
 形式: -∅ / -h [h]

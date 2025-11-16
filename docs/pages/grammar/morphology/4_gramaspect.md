@@ -2,7 +2,7 @@
 layout: page
 title: "文法アスペクト"
 permalink: /grammar/slotstructure/gramaspect/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 4
 ---
 

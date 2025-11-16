@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "感嘆"
+title: "語調"
 permalink: /grammar/slotstructure/pragmatic/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 12
 ---
 

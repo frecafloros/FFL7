@@ -2,7 +2,7 @@
 layout: page
 title: "法"
 permalink: /grammar/slotstructure/mood/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 7
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 title: "語根の例"
 permalink: /root/
+parent: "語彙"
 ---
 
 # 語根

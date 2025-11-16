@@ -2,7 +2,7 @@
 layout: page
 title: "極性"
 permalink: /grammar/slotstructure/polarity/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 11
 ---
 

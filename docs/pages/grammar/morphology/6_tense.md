@@ -2,7 +2,7 @@
 layout: page
 title: "時制"
 permalink: /grammar/slotstructure/tense/
-parent: "音韻形態論"
+parent: "形態論"
 nav_order: 6
 ---
 
