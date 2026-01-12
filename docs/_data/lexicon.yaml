@@ -1,0 +1,317 @@
+# ===============================================
+#  プリャンナ語 辞書データ
+# ===============================================
+
+# -----------------------------------------------
+#  語根 (Roots): CVC or C
+#  ファイル: 2_root.md に基づく
+# -----------------------------------------------
+roots:
+  - id: "r_ṭ"
+    root: "ṭ"
+    type: C
+    core_meaning:
+      ja: "〜である、〜に等しい"
+      en: "to be, to be equal to"
+    notes: "繋辞動詞（同値）"
+
+  - id: "r_ṇ"
+    root: "ṇ"
+    type: C
+    core_meaning:
+      ja: "〜と関連する"
+      en: "to be related to"
+    notes: "繋辞動詞（属性・関連）"
+
+  - id: "r_ṣ"
+    root: "ṣ"
+    type: C
+    core_meaning:
+      ja: "〜から生じる"
+      en: "to originate from, to arise from"
+    notes: "繋辞動詞（起源）"
+
+  - id: "r_ẓ"
+    root: "ẓ"
+    type: C
+    core_meaning:
+      ja: "〜に所属する"
+      en: "to belong to, to be a member of"
+    notes: "繋辞動詞（所属）"
+
+  - id: r_j
+    root: j
+    type: C
+    core_meaning:
+      ja: "[関係項語根]"
+    notes: ""
+
+  - id: "r_k'"
+    root: "k'"
+    type: C
+    core_meaning:
+      ja: "[不定項語根]"
+    notes: ""
+
+  - id: r_p̌
+    root: p̌
+    type: C
+    core_meaning:
+      ja: "[借用語根]"
+    notes: "固有名、借用語などの先行詞"
+
+  - id: r_ḫ
+    root: ḫ
+    type: C
+    core_meaning:
+      ja: "みんな"
+    notes: "0人称複数、不特定の「みんな」を指す。"
+
+  - id: r_h
+    root: h
+    type: C
+    core_meaning:
+      ja: "私"
+    notes: "1人称単数"
+
+  - id: r_f
+    root: f
+    type: C
+    core_meaning:
+      ja: "私たち（包含）"
+    notes: "1人称複数包含、聞き手を含める。"
+
+  - id: r_s
+    root: s
+    type: C
+    core_meaning:
+      ja: "私たち（除外）"
+    notes: "1人称複数除外、聞き手を含めない。"
+
+  - id: r_č
+    root: č
+    type: C
+    core_meaning:
+      ja: "私たち（曖昧）"
+    notes: "1人称複数曖昧、聞き手を含めるか含めないかを示さない。"
+
+  - id: r_p
+    root: p
+    type: C
+    core_meaning:
+      ja: "あなた"
+    notes: "2人称単数"
+
+  - id: r_mh
+    root: mh
+    type: C
+    core_meaning:
+      ja: "あなたたち"
+    notes: "2人称複数"
+
+  - id: r_t
+    root: t
+    type: C
+    core_meaning:
+      ja: "彼・彼女・それ"
+    notes: "3人称単数"
+
+  - id: r_nh
+    root: nh
+    type: C
+    core_meaning:
+      ja: "彼ら・彼女ら・それら"
+    notes: "3人称複数"
+
+  - id: r_k
+    root: k
+    type: C
+    core_meaning:
+      ja: "誰か・何か"
+    notes: "4人称単数"
+
+  - id: r_qh
+    root: qh
+    type: C
+    core_meaning:
+      ja: "誰かたち・何かたち"
+    notes: "4人称複数"
+
+  - id: r_lh
+    root: lh
+    type: C
+    core_meaning:
+      ja: "超越的存在"
+    notes: "5人称単数"
+
+  - id: r_ǩ
+    root: ǩ
+    type: C
+    core_meaning:
+      ja: "超越的存在たち"
+    notes: "5人称複数"
+
+  - id: r_pryãṇ
+    root: pryãṇ
+    type: CVC
+    core_meaning:
+      ja: "[自己参照]"
+    notes: "この言語等そのものを参照する。"
+
+  - id: r_fal
+    root: fal
+    type: CVC
+    core_meaning:
+      ja: "知る、理解する"
+      en: "to know, to understand"
+    notes: "概念的な理解や知識の保有を指す。"
+
+  - id: r_tul
+    root: tul
+    type: CVC
+    core_meaning:
+      ja: "動く、行く"
+      en: "to move, to go"
+    notes: ""
+
+  - id: r_lofa
+    root: lofa
+    type: CVC
+    core_meaning:
+      ja: "考える、思考する"
+      en: "to think, to ponder"
+    notes: ""
+
+  - id: "r_ṭhal"
+    root: "ṭhal"
+    type: CVC
+    core_meaning:
+      ja: "分析的思考"
+      en: "analytical thought"
+    notes: "論理と演繹に基づく思考。コンセプト：「真実を見つめ(ṭh)、覚醒に至る(l)営み」。"
+
+  - id: "r_hac"
+    root: "hac"
+    type: CVC
+    core_meaning:
+      ja: "内省的思考"
+      en: "introspective thought"
+    notes: "哲学と自己対話に基づく思考。コンセプト：「内なる知性(h)で、満足のいく答えを導き出す(c)こと」。"
+
+  - id: "r_k'an"
+    root: "k'an"
+    type: CVC
+    core_meaning:
+      ja: "創造的思考"
+      en: "creative thought"
+    notes: "発想と芸術に基づく思考。コンセプト：「未知(k')から、芸術的な何かを産み出す(n)働き」。"
+
+  - id: "r_b'il"
+    root: "b'il"
+    type: CVC
+    core_meaning:
+      ja: "直観的思考"
+      en: "intuitive thought"
+    notes: "ひらめきとインスピレーションに基づく思考。コンセプト：「精神力(b')によって、覚醒(l)する思考」。"
+
+  - id: "r_d'or"
+    root: "d'or"
+    type: CVC
+    core_meaning:
+      ja: "経験的思考"
+      en: "empirical thought"
+    notes: "帰納と経験則に基づく思考。コンセプト：「経験則(d')を、法則として具現化(r)する思考」。"
+
+  - id: "r_gwom"
+    root: "gwom"
+    type: CVC
+    core_meaning:
+      ja: "栄養のために摂食する"
+      en: "to eat for nourishment"
+    notes: "食べる/飲むの区別なく、生命維持や身体の基礎を作るための摂食行為。"
+
+  - id: "r_gil"
+    root: "gil"
+    type: CVC
+    core_meaning:
+      ja: "娯楽のために摂食する"
+      en: "to eat for pleasure"
+    notes: "食べる/飲むの区別なく、喜びや体験、感覚的な楽しみのための摂食行為。"
+
+  - id: "r_lhwourh"
+    root: "lhwourh"
+    type: CVC
+    core_meaning:
+      ja: "リンゴ属の生物"
+      en: "Organisms of the genus Malus"
+    notes: "Generated from 'Malus' via SHA-256 hash. Base meaning: organism of the genus."
+
+  - id: "r_vyaib̌"
+    root: "vyaib̌"
+    type: CVC
+    core_meaning:
+      ja: "ミカン属の生物"
+      en: "Organisms of the genus Citrus"
+    notes: "Generated from 'Citrus' via SHA-256 hash. Base meaning: organism of the genus."
+
+  - id: "r_jæ̈rhw"
+    root: "jæ̈rhw"
+    type: CVC
+    core_meaning:
+      ja: "バラ属の生物"
+      en: "Organisms of the genus Rosa"
+    notes: "Generated from 'Rosa' via SHA-256 hash. Base meaning: organism of the genus."
+
+# -----------------------------------------------
+#  派生接辞 (Affixes): CV
+#  ファイル: 1_semderiv.md に基づく
+# -----------------------------------------------
+affixes:
+  - id: a_ext
+    form: na
+    type: CV
+    position: prefix
+    function_category: "意味修正 (Semantic Modification)"
+    function_meaning:
+      ja: "拡大 (Extensive)"
+      en: "extending (scope), extensive"
+    notes: "概念の範囲を拡大したり、動作の規模を大きくしたりする。"
+
+  - id: a_k'a
+    form: "k'a"
+    type: CV
+    position: prefix
+    function_category: "部位 (Part)"
+    function_meaning:
+      ja: "果実"
+      en: "fruit of"
+    notes: "女帝(k')の豊かさと、物理的なモノ(a)の象徴から。"
+
+  - id: a_ṭhi
+    form: "ṭhi"
+    type: CV
+    position: prefix
+    function_category: "意味修正 (Semantic Modification)"
+    function_meaning:
+      ja: "代表、典型的"
+      en: "archetypal, representative"
+    notes: "後続する語根が示す集合の中から、代表的・典型的な要素を抽出する。"
+
+# -----------------------------------------------
+#  語彙 (Vocabulary): 完成した単語
+#  語根と接辞の組み合わせで定義
+# -----------------------------------------------
+vocabulary:
+  - id: w_nalofa
+    word: nalofa
+    part_of_speech: 動詞
+    definition:
+      ja: "熟考する、考えを大きく広げる"
+      en: "to reflect deeply, to broaden one's thoughts significantly"
+    derivation_path:
+      - a_ext
+      - r_lofa
+    example_sentences:
+      - pryanna: "tapha nalofwil."
+        japanese: "彼は大きく考えた。"
+        notes: "1_semderiv.md の例文より"

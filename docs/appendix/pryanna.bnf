@@ -1,0 +1,104 @@
+; pryanna.bnf - プリャンナ語 形態論・音素配列論 定義 (自己完結ファイル)
+
+; ===================================
+; A. 単語構造定義 (Word Structures)
+; ===================================
+; プリャンナの単語は、その品詞によってスロットの組み合わせが異なる。
+; 詳細は docs/pages/grammar/slotstructue.md を参照。
+
+<verb> ::= <slot1_prefix>* <slot2_root> <slot3_lex_aspect> <slot4_gram_aspect> <slot5_voice> <slot6_tense> <slot7_mood> <slot10_evid>? <slot11_pol>? <slot12_prag>?
+<noun> ::= <slot1_prefix>* <slot2_root> <slot3_lex_aspect> <slot8_num> <slot9_case>
+<gerund> ::= <slot1_prefix>* <slot2_root> <slot3_lex_aspect> <slot4_gram_aspect> <slot5_voice> <slot6_tense> <slot7_mood> <slot8_num> <slot9_case>
+<verb_nucleus> ::= <slot1_prefix>* <slot2_root> <slot3_lex_aspect> <slot4_gram_aspect> <slot5_voice> <slot6_tense> <slot7_mood> <slot8_num>? <slot9_case>? <slot10_evid>? <slot11_pol>? <slot12_prag>?
+; <gerund> and other types to be added later.
+
+
+; ===================================
+; B. スロット定義 (Slot Definitions)
+; ===================================
+
+; --- Slot 1: 意味派生 (Semantic Derivation) ---
+; 構造: (CV)*, 音素制約: なし
+<slot1_prefix> ::= <C_slot1> <V_slot1>
+<C_slot1>      ::= <consonant_group_A> | <consonant_group_B> | <consonant_group_C>
+<V_slot1>      ::= <vowel_group_A> | <vowel_group_B> | <vowel_group_C>
+
+; --- Slot 2: 語根 (Root) ---
+<slot2_root> ::= <C1> <V> <C2>
+<C1>         ::= <consonant_group_A> | <consonant_group_B> | <consonant_group_C>
+<V>          ::= <vowel_group_A> | <vowel_group_B> | <vowel_group_C>
+<C2>         ::= <consonant_group_A> | <consonant_group_B>
+
+; --- Slot 3: 語彙アスペクト (Lexical Aspect) ---
+; 構造: VC (7種 + 接辞なし)
+<slot3_lex_aspect> ::= "" | "ul" | "is" | "ot" | "af" | "in" | "ep"
+
+; --- Slot 4: 文法アスペクト (Grammatical Aspect) ---
+; 構造: yV (8種 + 接辞なし)
+; 注: 中立相は、後続のスロット5(態)がデフォルト(能動態, ∅)の場合は""、それ以外は"ya"となる。
+<slot4_gram_aspect> ::= "" | "ya" | "yeũ" | "yi" | "you" | "yu" | "yei" | "yo" | "yã"
+
+; --- Slot 5: 態 (Voice) ---
+; 構造: C (8種 + 接辞なし)
+; 注: 能動態は、スロット4がデフォルト(中立相, ∅)の場合は""、それ以外は"m"となる。
+<slot5_voice> ::= "" | "m" | "n" | "l" | "ṇ" | "f" | "s" | "x" | "ṣ"
+
+; --- Slot 6: 時制 (Tense) ---
+; 構造: wV (6種 + 接辞なし)
+; 注: 無時制は、後続のスロット7(法)がデフォルトの場合は""、それ以外は"wø"となる。
+<slot6_tense> ::= "" | "wø" | "wo" | "wi" | "wa" | "wu" | "we"
+
+; --- Slot 7: 法 (Mood) ---
+; 構造: C (11種)
+<slot7_mood> ::= "l" | "m" | "t" | "s" | "k" | "r" | "z" | "p" | "f" | "g" | "x"
+
+; --- Slot 8: 数 (Number) ---
+; 構造: V (7種)
+<slot8_num> ::= "a" | "ei" | "ai" | "oi" | "i" | "u" | "ã"
+
+; --- Slot 9: 格 (Case) ---
+; 構造: C(V) (59種)
+; 注: 'a', 'i' は声門破裂音を伴う 'a, 'i として扱う。'n', 'v' はVを伴わないC単独形。
+<slot9_case> ::= "pha" | "čhy" | "li" | "sa" | "n" | "'a" | "fwa" | "v" | "'i" | "mi" | "ni" | "lã" | "hi" | "hwu" | "võ" | "ro" | "ẓe" | "čhye" | "kæ" | "py" | "qe" | "mu" | "č̣a" | "wo" | "ṣu" | "zi" | "d'o" | "bi" | "ca" | "cu" | "ti" | "to" | "la" | "lu" | "či" | "čo" | "da" | "du" | "fi" | "fo" | "ka" | "ku" | "si" | "so" | "mõ" | "ræ" | "yẽ" | "ã" | "ṣi" | "k'æ̃" | "t'i" | "re" | "pu" | "čhyo" | "xe" | "lẽ" | "oi" | "ou" | "au"
+
+; --- Slot 10: 証拠性 (Evidentiality) ---
+; 構造: C (8種 + 接辞なし)
+<slot10_evid> ::= "" | "h" | "dh" | "čh" | "č̣h" | "b̌h" | "p̌h" | "gh" | "kh"
+
+; --- Slot 11: 極性 (Polarity) ---
+; 構造: V (3種, デフォルトは接辞なし)
+<slot11_pol> ::= "" | "ã" | "ei"
+
+; --- Slot 12: 語調 (Pragmatic) ---
+; 構造: CV (6種)
+<slot12_prag> ::= "la" | "ru" | "ma" | "ko" | "si" | "ze"
+
+
+; ===================================
+; C. 音素グループ定義 (Phoneme Groups)
+; ===================================
+
+; --- 子音グループ ---
+<consonant_group_A> ::= "m" | "n" | "p" | "t" | "k" | "s" | "l" | "r" | "f" | "v" | "z" | "č" | "'"
+<consonant_group_B> ::= "y" | "w" | "mh" | "mhy" | "mhw" | "my" | "mw" | "nh" | "nhy" | "nhw" | "ny" | "nw" | "ṇh" | "ṇhy" | "ṇhw" | "ṇ" | "ṇy" | "ṇw" | "qh" | "qhy" | "qhw" | "q" | "qy" | "qw" | "ph" | "phy" | "phw" | "b" | "by" | "bw" | "bh" | "bhy" | "bhw" | "th" | "thy" | "thw" | "d" | "dy" | "dw" | "dh" | "dhy" | "dhw" | "ṭ" | "ṭy" | "ṭw" | "ṭh" | "ṭhy" | "ṭhw" | "ḍ" | "ḍy" | "ḍw" | "ḍh" | "ḍhy" | "ḍhw" | "kh" | "khy" | "khw" | "g" | "gy" | "gw" | "gh" | "ghy" | "ghw" | "p̌h" | "p̌hy" | "p̌hw" | "b̌" | "b̌y" | "b̌w" | "b̌h" | "b̌hy" | "b̌hw" | "čh" | "čhy" | "čhw" | "c" | "cy" | "cw" | "ch" | "chy" | "chw" | "č̣" | "č̣y" | "č̣w" | "č̣h" | "č̣hy" | "č̣hw" | "c̣" | "c̣y" | "c̣w" | "c̣h" | "c̣hy" | "c̣hw" | "ǩ" | "ǩy" | "ǩw" | "ǩh" | "ǩhy" | "ǩhw" | "ǧ" | "ǧy" | "ǧw" | "ǧh" | "ǧhy" | "ǧhw" | "fy" | "fw" | "vy" | "vw" | "sy" | "sw" | "zy" | "zw" | "ṣ" | "ṣy" | "ṣw" | "ẓ" | "ẓy" | "ẓw" | "pr" | "pry" | "prw" | "br" | "bry" | "brw" | "rh" | "rhy" | "rhw" | "ry" | "rw" | "lh" | "lhy" | "lhw" | "ly" | "lw" | "jh" | "jhy" | "jhw" | "j" | "jy" | "jw" | "kr" | "kry" | "krw" | "gr" | "gry" | "grw" | "h" | "hy" | "hw"
+<consonant_group_C> ::= "m!" | "m!y" | "m!w" | "n!" | "n!y" | "n!w" | "p!" | "p!y" | "p!w" | "b!" | "b!y" | "b!w" | "t!" | "t!y" | "t!w" | "d!" | "d!y" | "d!w" | "p'" | "p'y" | "p'w" | "b'" | "b'y" | "b'w" | "t'" | "t'y" | "t'w" | "d'" | "d'y" | "d'w" | "ṭ'" | "ṭ'y" | "ṭ'w" | "ḍ'" | "ḍ'y" | "ḍ'w" | "k'" | "k'y" | "k'w" | "g'" | "g'y" | "g'w" | "f'" | "f'y" | "f'w" | "s'" | "s'y" | "s'w" | "ṣ'" | "ṣ'y" | "ṣ'w" | "ḫ'" | "ḫ'y" | "ḫ'w" | "p̌" | "ḫ" | "x"
+
+; --- 母音グループ ---
+<vowel_group_A> ::= "i" | "e" | "æ" | "a" | "ø" | "o" | "u"
+<vowel_group_B> ::= "ei" | "eu" | "ai" | "au" | "oi" | "ou" | "æo" | "øe" | "ĩ" | "ẽ" | "æ̃" | "ã" | "ø̃" | "õ" | "ũ" | "eĩ" | "eũ" | "aĩ" | "aũ" | "oĩ" | "oũ" | "æõ" | "øẽ"
+<vowel_group_C> ::= "ï" | "ë" | "æ̈" | "ä" | "ø̈" | "ö" | "ü" | "eï" | "eü" | "aï" | "aü" | "oï" | "oü" | "æö" | "øë"
+
+
+; ===================================
+; D. 制約ルール (Constraints)
+; ===================================
+; 注: 以下の制約はBNFの構文で直接表現できないため、処理系で別途適用する必要がある。
+;
+; 1. Tension_Avoidance: 
+;    もし <C1> が <consonant_group_C> (緊張子音) の要素である場合、
+;    <V> は <vowel_group_A> (緩和母音) の要素でなければならない。
+;
+; 2. Epenthesis for Slot 10:
+;    もしスロット10の直前のスロットが子音で終わる場合（例：スロット7やスロット9）、
+;    子音連続を避けるために、スロット10の直前に介入母音 "-o-" が挿入される。
+

@@ -3,7 +3,7 @@ layout: page
 title: "正書法"
 permalink: /grammar/phonology/orthography/
 parent: "音韻論"
-nav_order: 2
+nav_order: 5
 ---
 
 # 正書法 (Orthography)
