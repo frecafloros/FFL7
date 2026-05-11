@@ -1,2 +1,8 @@
 GEMINI.md
 logs
+scripts
+
+.venv
+.python-version
+pyproject.toml
+uv.lock
