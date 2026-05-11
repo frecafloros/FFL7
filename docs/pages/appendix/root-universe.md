@@ -30,7 +30,7 @@ nav_order: 1
 
 <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
     const slider = document.getElementById('c1-slider');
     const label = document.getElementById('c1-label');
     const heatmapDiv = document.getElementById('heatmap');
@@ -47,61 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
         available_c1: []
     };
 
-    // データの読み込み (GitHub Pages のパス解決を考慮)
-    const jsonUrl = '{{ "/assets/data/root_occupancy.json" | relative_url }}';
-    
-    fetch(jsonUrl)
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            console.log("Data loaded successfully", data);
-            occupancyData = data;
-            
-            if (!data.available_c1 || data.available_c1.length === 0) {
-                statusMsg.textContent = "表示可能なデータがありません。";
-                return;
-            }
-
-            // スライダーの設定
-            slider.max = data.available_c1.length - 1;
-            slider.value = 0;
-            
-            loadingOverlay.style.display = 'none';
-            updateHeatmap(0); // 最初の有効なインデックスを表示
-        })
-        .catch(err => {
-            console.error('Failed to load data:', err);
-            statusMsg.textContent = "データの読み込みに失敗しました。";
-            errorDetails.textContent = err.message;
-            errorDetails.style.display = 'block';
-        });
-
-    slider.addEventListener('input', function() {
-        updateHeatmap(parseInt(this.value));
-    });
-
     function updateHeatmap(sliderVal) {
-        const c1Idx = occupancyData.available_c1[sliderVal];
-        const c1Char = occupancyData.phonemes.C[c1Idx] || `C${String(c1Idx).padStart(3, '0')}`;
-        label.textContent = `${c1Char} (C${String(c1Idx).padStart(3, '0')}) [${sliderVal + 1}/${occupancyData.available_c1.length}]`;
+        if (!occupancyData.available_c1 || !occupancyData.available_c1.length) return;
 
-        // ヒートマップ用行列の初期化 (V x C2)
+        const c1Idx = occupancyData.available_c1[sliderVal];
+        const c1Char = occupancyData.phonemes.C[c1Idx] || ("C" + String(c1Idx).padStart(3, '0'));
+        label.textContent = c1Char + " (C" + String(c1Idx).padStart(3, '0') + ") [" + (sliderVal + 1) + "/" + occupancyData.available_c1.length + "]";
+
         const matrix = Array.from({ length: MAX_V }, () => Array(MAX_C).fill(0));
         const hoverText = Array.from({ length: MAX_V }, () => Array(MAX_C).fill('Empty'));
 
-        // 該当するC1のデータを抽出
         occupancyData.roots.forEach(root => {
             const [rC1, rV, rC2, phonetic, gloss] = root;
             if (rC1 === c1Idx) {
-                matrix[rV][rC2] = 1;
-                hoverText[rV][rC2] = `${phonetic}<br>Gloss: ${gloss || '-'}`;
+                if (rV < MAX_V && rC2 < MAX_C) {
+                    matrix[rV][rC2] = 1;
+                    hoverText[rV][rC2] = phonetic + "<br>Gloss: " + (gloss || '-');
+                }
             }
         });
 
-        const xLabels = Array.from({ length: MAX_C }, (_, i) => occupancyData.phonemes.C[i] || `C${String(i).padStart(3, '0')}`);
-        const yLabels = Array.from({ length: MAX_V }, (_, i) => occupancyData.phonemes.V[i] || `V${String(i).padStart(2, '0')}`);
+        const xLabels = Array.from({ length: MAX_C }, (_, i) => occupancyData.phonemes.C[i] || ("C" + String(i).padStart(3, '0')));
+        const yLabels = Array.from({ length: MAX_V }, (_, i) => occupancyData.phonemes.V[i] || ("V" + String(i).padStart(2, '0')));
 
         const data = [{
             z: matrix,
@@ -109,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
             y: yLabels,
             type: 'heatmap',
             colorscale: [
-                [0, '#1e1e1e'], // 空き
-                [1, '#00ffcc']  // 占有
+                [0, '#1e1e1e'],
+                [1, '#00ffcc']
             ],
             showscale: false,
             text: hoverText,
@@ -145,11 +112,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
         Plotly.newPlot(heatmapDiv, data, layout, config);
     }
-});
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const jsonUrl = '{{ "/assets/data/root_occupancy.json" | relative_url }}';
+        
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) throw new Error("HTTP error! status: " + response.status);
+                return response.json();
+            })
+            .then(data => {
+                occupancyData = data;
+                
+                if (!data.available_c1 || data.available_c1.length === 0) {
+                    statusMsg.textContent = "表示可能なデータがありません。";
+                    return;
+                }
+
+                slider.max = data.available_c1.length - 1;
+                slider.value = 0;
+                
+                loadingOverlay.style.display = 'none';
+                updateHeatmap(0);
+            })
+            .catch(err => {
+                console.error('Failed to load data:', err);
+                statusMsg.textContent = "データの読み込みに失敗しました。";
+                errorDetails.textContent = err.message;
+                errorDetails.style.display = 'block';
+            });
+
+        slider.addEventListener('input', function() {
+            updateHeatmap(parseInt(this.value));
+        });
+    });
+})();
 </script>
 
 <style>
-/* スライダーのスタイル調整 */
 #c1-slider {
     -webkit-appearance: none;
     height: 8px;

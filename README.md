@@ -37,3 +37,9 @@ git add .
 git commit -m "vX.XX"
 git push origin main
 ```
+
+## 単語の更新
+
+```shell
+uv run scripts/export_data.py
+```
